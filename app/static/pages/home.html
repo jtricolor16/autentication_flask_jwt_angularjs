@@ -1,0 +1,17 @@
+{{msg}}
+
+<div ng-show="hc.message=='success'">
+    <rg-message message="Success to delete your profile"></rg-message>
+    <button ng-click="mc.home()">Home</button>
+</div>
+
+<rg-message message="Error to delete user" ng-show="hc.message=='error'"></rg-message>
+
+<div ng-show="hc.message!='success'">
+    <h1>{{hc.user.name}}</h1>
+    <h3>{{hc.user.email}}</h3>
+
+    <button ng-click="hc.redirect_to_update()">Update</button>
+    <button ng-click="hc.logout()">Logout</button>
+    <button ng-click="hc.delete_user()">Delete</button>
+</div>

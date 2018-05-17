@@ -1,0 +1,19 @@
+<div>
+    <h1 ng-show="rc.user.id==undefined">Register</h1>
+    <h1 ng-show="rc.user.id!=undefined">Update</h1>
+    <div ng-show="rc.message=='Success!'">
+        <rg-message message="Success to Save User"></rg-message>
+        <button ng-click="mc.home()">Home</button>
+    </div>
+    <rg-message message="Error to Save User" ng-show="rc.message=='Error!'"></rg-message>
+    <div ng-show="rc.message!='Success!'">
+        <form ng-submit="rc.submit()">
+            User: <input type="text" name="name" id="name" ng-model="rc.user.name">
+            Password: <input type="password" name="password" id="password" ng-model="rc.user.password">
+            Confirm Password: <input type="password" name="validate_password" id="validate_password" ng-model="rc.user.validate_password">
+            Email: <input type="email" name="email" id="email" ng-model="rc.user.email">
+            <input type="submit" value="Register">
+        </form>
+    </div>
+
+</div>

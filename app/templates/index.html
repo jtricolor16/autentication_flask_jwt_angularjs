@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html ng-app="DemoApp">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.min.js"></script>
+    <script src="//code.angularjs.org/1.4.4/angular-route.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ngStorage/0.3.10/ngStorage.min.js"></script>
+    <script src="{{ url_for('static', filename='main.js') }}"></script>
+    <script src="{{ url_for('static', filename='angularJs/factories/BearerAuthInterceptor.js') }}"></script>
+    <script src="{{ url_for('static', filename='angularJs/configs/interceptors.js') }}"></script>
+    <script src="{{ url_for('static', filename='angularJs/configs/routes.js') }}"></script>
+    <script src="{{ url_for('static', filename='angularJs/directives/rgMessage.js') }}"></script>
+    <script src="{{ url_for('static', filename='angularJs/controllers/mainController.js') }}"></script>
+    <script src="{{ url_for('static', filename='angularJs/controllers/loginController.js') }}"></script>
+    <script src="{{ url_for('static', filename='angularJs/controllers/homeController.js') }}"></script>
+    <script src="{{ url_for('static', filename='angularJs/controllers/registerController.js') }}"></script>
+    <title>Demo</title>
+</head>
+<body ng-controller="mainController as mc">
+    <a ng-show="mc.user==undefined" ng-href="/"><h1>Home</h1></a>
+    <a ng-show="mc.user!=undefined" href="" ng-click="mc.home()"><h1>Home</h1></a>
+    <ng-view></ng-view>
+</body>
+</html>

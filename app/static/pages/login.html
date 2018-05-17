@@ -1,0 +1,9 @@
+<h1>Login</h1>
+<rg-message message="Invalid user or Password" ng-show="lc.message==true"></rg-message>
+<form ng-submit="lc.login()" method="post">
+    Login: <input type="email" name="login" id="login" ng-model="lc.user.login">
+    Senha: <input type="password" name="password" id="password" ng-model="lc.user.password">
+    <input type="submit" value="Ok">
+</form>
+<button ng-click="lc.register()">Register</button>
+<!--<button ng-click="lc.recovery_password()">Recovery Password</button>-->
